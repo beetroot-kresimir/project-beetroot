@@ -1,0 +1,104 @@
+@import "variable.scss";
+@import "typography.scss";
+
+@mixin display-flex() {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.container {
+  @include display-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: 3rem 0;
+  box-sizing: border-box;
+  @media (min-width: 40rem) {
+    padding: 3rem 0;
+  }
+}
+
+.sass-section {
+  border: $border-value;
+  background: $primary-color;
+  text-align: center;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.sass-introduction {
+  //   border: $border-value;
+  //   background: $primary-color;
+  //   text-align: center;
+  //   width: 90%;
+  //   box-sizing: border-box;
+  @extend .sass-section;
+  padding: 2rem;
+  box-shadow: 0.2rem 0.2rem 0.1rem #ccc;
+  @media (min-width: 40rem) {
+    width: 30rem;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.sass-details {
+  @extend .sass-section;
+  //   border: $border-value;
+  //   background: $primary-color;
+  //   text-align: center;
+  //   width: 90%;
+  //   box-sizing: border-box;
+  padding: 1rem;
+  margin: 2rem 0;
+  @media (min-width: 40rem) {
+    width: 30rem;
+  }
+  .section-header {
+    border-bottom: $border-value;
+
+    h1 {
+      margin: 0 0 1rem 0;
+    }
+  }
+}
+
+.documentation-links {
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+
+  li {
+    margin: 0.2rem 0;
+    background: white;
+  }
+
+  .documentation-link {
+    text-decoration: none;
+    color: #5e6eed;
+    display: block;
+    padding: 0.2rem;
+    border: $border-value;
+
+    &:hover,
+    &:active {
+      color: white;
+      background: #3ffa84;
+      border-color: #3ffa84;
+    }
+  }
+}
+
+html {
+  @media (min-width: 40rem) {
+    font-size: 125%;
+  }
+}

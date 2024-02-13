@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .bigscreen {
+      display: block;
+    }
+    .smallscreen {
+      display: none;
+    }
+    @media only screen and (max-width: 800px) {
+      .bigscreen {
+        display: none;
+      }
+      .smallscreen {
+        display: block;
+      }
+    }
+  </style>
+  <body>
+    <!-- 
+        srcsret=""
+            - browser will take the viewport width, multiply it by the pixel density (window.devicePixelRatio) and choose the closest sized image
+        sizes=""
+            - how many width of the page the image should occupy when it is on specific screen width
+    -->
+    <div>1st image: legs</div>
+    <div>2nd image: car</div>
+    <div>3rd image: tree</div>
+    <!-- srcset with width -->
+    <!-- <img
+      src="https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA"
+      alt=""
+      srcset="
+        https://fastly.picsum.photos/id/455/320/320.jpg?hmac=BoBxO_JbBH0eVEYhzU4CvsVV__m3HIqgMRLPY8gjbkY 320w,
+        https://fastly.picsum.photos/id/1070/480/480.jpg?hmac=bip0KemEc4eWKXJjHt0PzlYfn1qNABHFChwQW_VxoME 480w,
+        https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA 800w
+      "
+      sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 800px"
+    /> -->
+
+    <!-- srcset with picel density -->
+    <!-- <img
+      src="https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA"
+      alt=""
+      srcset="
+        https://fastly.picsum.photos/id/455/320/320.jpg?hmac=BoBxO_JbBH0eVEYhzU4CvsVV__m3HIqgMRLPY8gjbkY 2x,
+        https://fastly.picsum.photos/id/1070/480/480.jpg?hmac=bip0KemEc4eWKXJjHt0PzlYfn1qNABHFChwQW_VxoME 3x,
+        https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA 4x
+      "
+      sizes="(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 800px"
+    /> -->
+
+    <!-- <picture> -->
+    <!-- <picture>
+      <source
+        srcset="
+          https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA
+        "
+        media="(min-width: 1200px)"
+      />
+      <source
+        srcset="
+          https://fastly.picsum.photos/id/1070/480/480.jpg?hmac=bip0KemEc4eWKXJjHt0PzlYfn1qNABHFChwQW_VxoME
+        "
+        media="(min-width: 800px)"
+      />
+      <img
+        src="https://fastly.picsum.photos/id/455/320/320.jpg?hmac=BoBxO_JbBH0eVEYhzU4CvsVV__m3HIqgMRLPY8gjbkY"
+        alt=""
+      />
+    </picture> -->
+
+    <!-- media query -->
+
+    <div>
+      <img alt="" class="bigscreen" src="https://fastly.picsum.photos/id/19/800/800.jpg?hmac=3TKnQ3WBqP-IjatPrA6WEPZGkNdbNu0pG0gTtn3cDbA" />
+      <img alt="" class="smallscreen" src="https://fastly.picsum.photos/id/455/320/320.jpg?hmac=BoBxO_JbBH0eVEYhzU4CvsVV__m3HIqgMRLPY8gjbkY" />
+    </div>
+  </body>
+</html>

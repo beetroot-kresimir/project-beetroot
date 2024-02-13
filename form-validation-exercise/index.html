@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+        // Create a form, Style the form however you want. All the inputs should be required
+        // Name: required
+        // Password: required, minimum 6 characters
+        // Mail: required, any normal e-mail address
+        // Website: required, anything width http:// or https:// in front of
+        // Date: required, specify maximum and minimum dates width max and min elements
+        // Num: required, four digit number
+    -->
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          name="name"
+          class="name"
+          placeholder="Ola Nordmann"
+          pattern="^[( )a-zA-Z]+$"
+          required
+        />
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          name="password"
+          class="password"
+          placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;"
+          pattern=".{6}"
+          required
+        />
+      </div>
+      <div>
+        <label for="mail">Mail:</label>
+        <input
+          type="email"
+          name="mail"
+          class="mail"
+          placeholder="ola@nordmann.no"
+          required
+        />
+      </div>
+      <div>
+        <label for="website">Website:</label>
+        <input
+          type="url"
+          name="website"
+          placeholder="https://google.com"
+          pattern="(http|https)://.+"
+          required
+        />
+      </div>
+      <div>
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          name="date"
+          min="2023-01-01"
+          max="2023-12-31"
+          required
+        />
+      </div>
+      <div>
+        <label for="onechar">Four digit num:</label>
+        <input
+          type="text"
+          name="onechar"
+          placeholder="0000"
+          pattern="^[0-9]{4}"
+          required
+        />
+      </div>
+      <div>
+        <input type="submit" />
+      </div>
+    </form>
+  </body>
+</html>

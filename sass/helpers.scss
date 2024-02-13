@@ -1,0 +1,8 @@
+@mixin base-style-mixin {
+  color: #333;
+  font-size: 16px;
+}
+
+@mixin text-color($color) {
+  color: $color;
+}

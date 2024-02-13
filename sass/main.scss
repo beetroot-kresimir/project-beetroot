@@ -1,0 +1,7 @@
+@use 'helpers';
+@use 'variables';
+
+body {
+    background-color: variables.$primary-color;
+    @include helpers.base-style-mixin;
+}

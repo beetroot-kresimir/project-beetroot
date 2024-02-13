@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1. create simple navigation with 2 items: "Home" and "Favorites" -->
+    <!-- 2. create new page "Favorites" 
+      
+      and show all the items from localstorage 
+            (we save to localstorage when "Save" btn is clicked) 
+    -->
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+      </ul>
+    </nav>
+
+    <div id="container">
+    </div>
+
+    <script>
+      const localStorageFavorite = localStorage.getItem("favorite");
+      const localStorageParsed = JSON.parse(localStorageFavorite);
+      console.log(localStorageParsed);
+
+      const container = document.getElementById("container");
+
+      for (let i = 0; i < localStorageParsed.length; i++) {
+        const currentElement = localStorageParsed[i];
+        const paragraph = document.createElement("p");
+        paragraph.innerText = currentElement.title;
+        container.appendChild(paragraph);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="error-container"></div>
+    <ul id="list"></ul>
+
+    <script>
+      const url = "https://jsonplaceholder.typicode.com/posts";
+
+      function showError(text) {
+        const errorContainer = document.getElementById("error-container");
+        const p = document.createElement("p");
+        errorContainer.textContent = text;
+        errorContainer.appendChild(p);
+      }
+      function showList(json) {
+        const ul = document.getElementById("list");
+        for (let i = 0; i < json.length; i++) {
+          const element = json[i];
+          const li = document.createElement("li");
+          li.textContent = element.title;
+          ul.appendChild(li);
+        }
+      }
+
+      //   fetch(url, { method: "GET" }) // 1. What's returned is Promise
+      //     .then((rawResponse) => {
+      //       if (!rawResponse.ok) {
+      //         showError("Error ocurred! Reload the page please.");
+      //         return;
+      //       }
+      //       // 2. response comes here
+      //       console.log("rawResponse : ", rawResponse);
+      //       const jsonPromise = rawResponse.json(); // 3. this also returns a Promise
+      //       return jsonPromise;
+      //     })
+      //     .then((json) => {
+      //       // 4. here I get data I can work with in our JS code
+      //       console.log("json : ", json);
+      //        showList(json)
+      //       }
+      //     })
+      //     .catch((err) => {
+      //       showError("Network error ocurred! Reload the page please.");
+      //       console.log("err retrieved: ", err);
+      //     });
+
+      // fetch API
+      // Promises (then/catch and try/catch)
+      // HTTP
+      // HTTP request methods
+      // HTTP status codes
+      // REST
+      async function fetchPosts() {
+        try {
+          const rawResponse = await fetch(url, { method: "GET" }); 
+          if (!rawResponse.ok) {
+            showError("Error ocurred! Reload the page please.");
+            return;
+          }
+          const json = await rawResponse.json();
+          showList(json);
+        } catch (err) {
+          showError("Network error ocurred! Reload the page please.");
+        }
+      }
+
+      fetchPosts();
+    </script>
+  </body>
+</html>

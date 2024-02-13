@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    /* background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(180,153,53,1) 0%, rgba(255,132,0,1) 100%); */
+}
+@font-face {
+    font-family: JuliusSansOne;
+    src: url(../Julius_Sans_One/JuliusSansOne-Regular.ttf);
+  }
+.element__position {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.image__position {
+    width: 50%;
+    padding-left: 80px;
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text__style {
+    width: 50%;
+    font-family: JuliusSansOne;
+    padding-left: 80px;
+    padding-right: 30px;
+}
+.running__head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.title__h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.description__style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.key-word__style {
+    display: flex;
+     justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.key-word__style-position {
+    font-weight: bolder;
+    padding: 15px;
+}
+.button__position {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button__style {
+    background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: solid;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}

@@ -1,0 +1,79 @@
+/* Element selector */
+/* h1 {
+  color: red;
+} */
+
+/* Class selector */
+/* .blog-post {
+    color: red;
+} */
+
+/* Universal selector */
+/* * {
+  color: red;
+} */
+
+/* ID selector */
+/* #main-title {
+    color: red;
+} */
+
+/* Attributes selector */
+/* [disabled] {
+    color: red;
+} */
+
+/* PARENT STYLES ARE INHERRITED TO CHILD ELEMENTS IF NOT OVERWRITTEN  */
+/* div {
+  color: red;
+}
+p {
+  color: green;
+} */
+
+/* ORDER MATTERS, THE LAST ONE OVERWRITES */
+/* h1 {
+    color: red;
+}
+
+h1 {
+    color: blue;
+} */
+
+/* ORDER DOESN'T MATTER ANYMORE - ORDER MATTERS ONLY IF WE HAVE THE SPECIFICITY */
+/* .section-title {  
+    color: red;
+}
+
+h1 {              
+    color: blue;
+}
+ */
+
+/* .pseudo-class{
+    color: blue
+ }
+ .pseudo-class:hover{
+    color: red;
+ } */
+
+/* COMBINATORS */
+/* Adjacent sibling */
+/* h2 + p {
+    color: red;
+} */
+
+/* General sibling */
+/* h2 ~ p {
+  color: red;
+} */
+
+/* Direct child */
+/* section > p {
+    color: red;
+} */
+
+/* Descendant */
+/* section p {
+    color: red;
+} */

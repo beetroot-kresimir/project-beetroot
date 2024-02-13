@@ -1,0 +1,85 @@
+* {
+  appearance: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+  /* outline: none; */
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login__form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.login__form-element {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.login__form-element-row{
+    display: flex;
+    /* justify-content: center; */
+    /* flex-direction: column; */
+}
+
+label,
+.login__form-element input {
+  margin: 3px 0;
+}
+
+.login__form-element input,
+button {
+  padding: 8px;  
+  margin: 10px 0;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid red;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: red;
+  color: white;
+
+}
+
+.login__form-element input {
+  border-radius: 10px;
+  border: 1px solid rgb(4, 196, 4);
+}
+
+input[type="checkbox"] {
+    margin-left: 15px;
+}
+.login__form-element-row input[type="checkbox"] {
+    margin-left: 15px;
+    appearance: auto;
+    accent-color: red;
+}
+.login__form-element-row {
+
+    margin: 10px 0;
+}
+
+.login__form-element input::placeholder {
+  color: red;
+}
+
+input:focus-visible {
+  /* border: 1px solid red; */
+}

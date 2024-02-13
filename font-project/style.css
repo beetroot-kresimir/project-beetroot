@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "AnonymousPro";
+  src: url("AnonymousPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "AnonymousPro";
+  src: url("AnonymousPro-Bold.ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "AnonymousPro";
+  src: url("AnonymousPro-Italic.ttf");
+  font-style: italic;
+}
+
+.heading{
+  font-family: "AnonymousPro";
+  font-weight: 700;
+}
+
+div {
+  font-family: "UnknownFont", 'Times New Roman', Times, serif;
+}
+

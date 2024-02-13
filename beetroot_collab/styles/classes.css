@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.655);
+}
+
+.main_text {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+
+.four_letter-color  {
+    color: rgba(0, 76, 255, 0.666);
+    text-transform: uppercase;
+    margin-top: 30px;
+
+}
+
+.text_description {
+    text-align: center;
+}
+
+.card_1 {
+    width: 20%;
+    margin-left: 10%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: inline-block;
+    justify-content: center;
+
+}
+
+
+.card-1_img img {
+    width: 100%;
+    height: auto;
+
+}
+
+.title {
+    text-align: center;
+    background-color: burlywood;
+}
+
+.title_description {
+    background-color: burlywood;
+    text-align: center;
+
+
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Text</title>
+    <style>
+      #text-element {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text-element" >This is some text that can be hidden or displayed.</p>
+    <button onclick="toggle()">Toggle Text</button>
+
+    <script>
+      const textElement = document.getElementById("text-element");
+
+      const style = getComputedStyle(textElement);
+
+      function toggle() {
+        // check if <p> is displayed
+        if (textElement.style.display === "block") {
+          // if yes, then hide it
+          textElement.style.display = "none";
+        } else {
+          // if no, then show it
+          textElement.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

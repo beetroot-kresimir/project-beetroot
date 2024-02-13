@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="place">storage</div>
+
+    <script>
+      // const cars = [
+      //   {
+      //     model: "BMW",
+      //   },
+      //   {
+      //     model: "VW",
+      //   },
+      // ];
+      const carsString = JSON.stringify(cars);
+      window.localStorage.setItem("cars", carsString);
+
+      const cars = window.localStorage.getItem("cars");
+      const carsBack = JSON.parse(cars);
+
+      for (let i = 0; i < carsBack.length; i++) {
+        const element = carsBack[i].model;
+        console.log(element);
+      }
+
+      //   const name = window.localStorage.getItem("name");
+      //   console.log(name);
+      //   const place = document.getElementById("place");
+      //   place.textContent = name;
+      //   localStorage.removeItem("name");
+
+      // sessionStorage.setItem("name", "Kresimir");
+    </script>
+  </body>
+</html>

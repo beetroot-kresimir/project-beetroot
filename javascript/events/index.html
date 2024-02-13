@@ -1,0 +1,127 @@
+<!-- 
+Create a working TODO list.
+When clicking “Add”, a new list item is added to the TODO section. When clicking the checkbox, 
+the item is moved to the “Completed” field. Edit/Delete edits or deletes an item. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO List</title>
+    <style>
+      #todoList,
+      #completedList {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .todo-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+      }
+
+      .completed-item {
+        text-decoration: line-through;
+        color: #888;
+      }
+
+      .delete-btn {
+        margin-left: 10px;
+        cursor: pointer;
+      }
+
+      .btn {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>TODO List</h2>
+
+    <div>
+      <input type="text" id="taskInput" placeholder="Enter a new task" />
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <ul id="todoList"></ul>
+
+    <h2>Completed</h2>
+    <ul id="completedList">
+      <!-- Completed items will be added here dynamically -->
+    </ul>
+
+    <script>
+      function addTask() {
+        const taskInput = document.getElementById("taskInput");
+        const todoList = document.getElementById("todoList");
+
+        // create list item
+        const todoListItem = document.createElement("li");
+
+        // create label
+        const todoListItemLabel = document.createElement("label");
+        todoListItemLabel.textContent = taskInput.value;
+
+        // create checkbox
+        const todoListItemCheckbox = document.createElement("input");
+        todoListItemCheckbox.type = "checkbox";
+        todoListItemCheckbox.addEventListener("change", function () {
+          moveItem(
+            todoListItem,
+            document.getElementById("completedList"),
+            todoListItemBtnEdit,
+            todoListItemBtnDelete,
+            todoListItemCheckbox
+          );
+        });
+
+        // create button Edit
+        const todoListItemBtnEdit = document.createElement("button");
+        todoListItemBtnEdit.textContent = "Edit";
+        todoListItemBtnEdit.className = "btn";
+        todoListItemBtnEdit.addEventListener("click", function () {
+          editItem(todoListItemLabel);
+        });
+
+        // create button Delete
+        const todoListItemBtnDelete = document.createElement("button");
+        todoListItemBtnDelete.textContent = "Delete";
+        todoListItemBtnDelete.className = "btn";
+        todoListItemBtnDelete.addEventListener("click", function () {
+          deleteItem(todoListItemBtnDelete);
+        });
+
+        // append elements to <li>
+        todoListItem.appendChild(todoListItemCheckbox);
+        todoListItem.appendChild(todoListItemLabel);
+        todoListItem.appendChild(todoListItemBtnEdit);
+        todoListItem.appendChild(todoListItemBtnDelete);
+
+        // append <li> to <ul>
+        todoList.appendChild(todoListItem);
+
+        taskInput.value = "";
+      }
+      function deleteItem(button) {
+        const todoListItem = button.parentNode;
+        const todoList = todoListItem.parentNode;
+
+        todoList.removeChild(todoListItem);
+      }
+      function editItem(label) {
+        const newText = prompt(`Edit label ${label.textContent}:`);
+        label.textContent = newText;
+      }
+      function moveItem(item, destination, editBtn, delBtn, checkbox) {
+        destination.appendChild(item);
+
+        item.className = "completed-item";
+        item.removeChild(checkbox);
+        item.removeChild(editBtn);
+        item.removeChild(delBtn);
+      }
+    </script>
+  </body>
+</html>

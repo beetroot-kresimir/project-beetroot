@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <style>
+      .card__title {
+        font-size: 20px;
+        color: rgb(159, 145, 145);
+        font-family: "Courier New", Courier, monospace;
+      }
+      .card__title--large {
+        font-size: 30px;
+        font-size: 20px;
+        color: rgb(159, 145, 145);
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. Block component -->
+    <!-- 2. Element component -->
+    <!-- 3. Modifier component -->
+    <!--    block__element--modifier    -->
+
+    <!-- Block -->
+    <div class="card">
+      <img class="card__img" src="..." />
+      <!--  -->
+      <!-- <h2 class="card__heading">Some title</h2> -->
+
+      <h2 class="card__title">Some title</h2>
+      <h2 class="card__title--large">Some title</h2>
+
+      <!-- <h2 class="card__title card__title--large">Some title</h2> -->
+
+      <!-- <p class="card__paragraph"> -->
+      <!-- <p class="card__content"> -->
+      <p class="card__description">
+        some paragraph textsome paragraph textsome paragraph textsome paragraph
+        textsome paragraph textsome paragraph textsome paragraph textsome
+        paragraph text
+      </p>
+      <p class="card__description">
+        some paragraph textsome paragraph textsome paragraph textsome paragraph
+        textsome paragraph textsome paragraph textsome paragraph textsome
+        paragraph text
+      </p>
+      <p class="card__description card__description--red">
+        some paragraph textsome paragraph textsome paragraph textsome paragraph
+        textsome paragraph textsome paragraph textsome paragraph textsome
+        paragraph text
+      </p>
+      <a class="card__link">Link</a>
+    </div>
+  </body>
+</html>
