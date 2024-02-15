@@ -1,0 +1,81 @@
+<!--
+2. Create an html-page with a large table. When clicking the column heading, 
+it is necessary to sort data of that column. Note that numerical values 
+should be sorted as numbers, not as strings. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+      }
+
+      th {
+        cursor: pointer;
+      }
+      td,
+      th {
+        border: 3px solid #504c4c;
+        text-align: left;
+        padding: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="table">
+      <tr>
+        <th id="heading">Company</th>
+      </tr>
+    </table>
+
+    <script>
+      function removeItems(items, parent) {
+        for (let i = 0; i < items.length; i++) {
+          const element = items[i];
+          parent.removeChild(element);
+        }
+      }
+      function addItems(items, parent) {
+        for (let i = 0; i < items.length; i++) {
+          const element = items[i];
+          const tr = document.createElement("tr");
+          tr.classList.add("item");
+          const td = document.createElement("td");
+          td.textContent = element;
+          tr.appendChild(td);
+          table.appendChild(tr);
+        }
+      }
+
+      const array = ["Centro", "Ernst", "Trading", "Kskks", "Something"];
+      const table = document.getElementById("table");
+      let orderState = "DESCENDING";
+      addItems(array, table);
+      const heading = document.getElementById("heading");
+      heading.addEventListener("click", function () {
+        if (orderState === "DESCENDING") {
+          array.sort();
+          const items = document.querySelectorAll(".item");
+          removeItems(items, table);
+          addItems(array, table);
+
+          orderState = "ASCENDING";
+        } else {
+          array.sort();
+          array.reverse();
+          const items = document.querySelectorAll(".item");
+          removeItems(items, table);
+          addItems(array, table);
+
+          orderState = "DESCENDING";
+        }
+      });
+    </script>
+  </body>
+</html>
