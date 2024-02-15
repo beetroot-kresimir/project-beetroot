@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./styles.scss\");\n\n\nconst app = document.getElementById('app');\napp.innerHTML = `<h1>Hello Webpackkelellelelelel!</h1>`;\n\n\n//# sourceURL=webpack://webpack-example/./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.scss */ \"./styles.scss\");\n/* harmony import */ var _cookie_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./cookie.png */ \"./cookie.png\");\n\n\n\nconst app = document.getElementById(\"app\");\napp.innerHTML = `<h1>Hello Webpackkelellelelelel!</h1>`;\n\nconst img = document.createElement(\"img\");\nimg.src = _cookie_png__WEBPACK_IMPORTED_MODULE_1__;\napp.appendChild(img);\n\n\n//# sourceURL=webpack://webpack-example/./index.js?");
 
 /***/ }),
 
@@ -118,6 +118,16 @@ eval("\n\n/* istanbul ignore next  */\nfunction apply(styleElement, options, obj
 
 eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElement) {\n  if (styleElement.styleSheet) {\n    styleElement.styleSheet.cssText = css;\n  } else {\n    while (styleElement.firstChild) {\n      styleElement.removeChild(styleElement.firstChild);\n    }\n    styleElement.appendChild(document.createTextNode(css));\n  }\n}\nmodule.exports = styleTagTransform;\n\n//# sourceURL=webpack://webpack-example/./node_modules/style-loader/dist/runtime/styleTagTransform.js?");
 
+/***/ }),
+
+/***/ "./cookie.png":
+/*!********************!*\
+  !*** ./cookie.png ***!
+  \********************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"29a3191daa4a4a42b08e.png\";\n\n//# sourceURL=webpack://webpack-example/./cookie.png?");
+
 /***/ })
 
 /******/ 	});
@@ -185,6 +195,11 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
