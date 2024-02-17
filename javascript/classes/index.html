@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    2 paradigms: FP = functional programming OOP = object oriented programming
+  </body>
+
+  <script>
+    // 1) Implement a class that describes a circle. It must have the following components:
+
+    // a field that stores the radius of the circle;
+    // get-property that returns the radius of the circle;
+    // set-property that sets the radius of the circle;
+    // get-property that returns the diameter of the circle;
+    // a method that calculates the area of a circle;
+    // a method that calculates the length of the circle.
+    // Demonstrate the work of properties and methods.
+
+    // classes are used for abstacting complexity, organising logic in units/objects
+    class Vehicle {
+      constructor(typeFromInstance, fuel) {
+        // if field starts with underscore, that's the signal to other developer
+        // they whould now work with it outside of the class, as it is private
+        // property of that class. However, theoretically they can still access it,
+        // as true private memebrs doesn't exist in Javascript
+        this._type = typeFromInstance;
+        this._fuel = fuel;
+      }
+      // method used to get type ouside of the class
+      get type() {
+        return this._type;
+      }
+      // method used to get fuel ouside of the class
+      get fuel() {
+        return this._fuel;
+      }
+      // method used to set type ouside of the class
+      set type(type) {
+        return (this._type = type);
+      }
+      // method used to set fuel ouside of the class
+      set fuel(fuel) {
+        return (this._fuel = fuel);
+      }
+
+      // this method is shared
+      drive() {
+        return `I am driving ${this._type} type with fuel ${this._fuel}.`;
+      }
+    }
+    const suv = new Vehicle("SUV", "petrol");
+    const coupe = new Vehicle("coupe", "petrol");
+    const sedan = new Vehicle("sedan", "petrol");
+
+    console.log(suv.drive());
+    console.log(coupe.drive());
+    console.log(sedan.drive());
+
+
+
+
+
+
+
+
+
+
+    // // --inheritance--
+    // class SuperVehicle extends Vehicle {
+    //   constructor(type, fuel, turbo) {
+    //     super(type, fuel)
+
+    //     this.turbo = turbo;
+    //   }
+    //   doSuperDrive() {
+    //     return `I am driving type ${this.type} with turbo ${this.turbo}`;
+    //   }
+    // }
+
+    // const superVehicle = new SuperVehicle("SUV", "petrol", "1234");
+
+    // console.log(superVehicle.drive());
+    // console.log(superVehicle.doSuperDrive());
+
+  </script>
+</html>

@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    .item {
+      border: 1px solid grey;
+      padding: 20px;
+      cursor: pointer;
+    }
+  </style>
   <body>
     <!-- 1. create simple navigation with 2 items: "Home" and "Favorites" -->
-    <!-- 2. create new page "Favorites" 
-      
-      and show all the items from localstorage 
+    <!-- 2. create new page "Favorites"  
+            and show all the items from localstorage 
             (we save to localstorage when "Save" btn is clicked) 
+         3. add a class to each item in the Favorites section 
+             border: 1px solid grey;
+             padding: 20px;
+             cursor: pointer; 
+         4. once you click on specific item, you should be redirected to antoher page 
+            which will show only info about the item you clicked on
+            Tips: 
+              1. add event listener on each item click
+                  function called by listener should navigate the user to /single.html?id=23413
+              2. on new page favorite.html, we get the item from localstorage by id from url
+
+
+         
     -->
 
     <nav>
@@ -20,8 +39,7 @@
       </ul>
     </nav>
 
-    <div id="container">
-    </div>
+    <div id="container"></div>
 
     <script>
       const localStorageFavorite = localStorage.getItem("favorite");
@@ -33,7 +51,12 @@
       for (let i = 0; i < localStorageParsed.length; i++) {
         const currentElement = localStorageParsed[i];
         const paragraph = document.createElement("p");
+        paragraph.classList.add("item");
+
         paragraph.innerText = currentElement.title;
+        paragraph.addEventListener("click", function () {
+          window.location.href = `favorite.html?id=${currentElement.id}`;
+        });
         container.appendChild(paragraph);
       }
     </script>

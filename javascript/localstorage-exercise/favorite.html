@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .item {
+      border: 1px solid grey;
+      padding: 20px;
+      cursor: pointer;
+    }
+  </style>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+      </ul>
+    </nav>
+
+    <div id="favorite-item"></div>
+
+    <script>
+      const params = new URLSearchParams(document.location.search);
+      const id = params.get("id");
+
+      function showItem(json) {
+        const element = json[0];
+        const wrapperDiv = document.getElementById("favorite-item");
+
+        const p = document.createElement("p");
+        p.textContent = element.title;
+
+        const img = document.createElement("img");
+        img.src = element.thumbnailUrl;
+
+        wrapperDiv.appendChild(img);
+        wrapperDiv.appendChild(p);
+      }
+
+      async function fetchItem() {
+        try {
+          const url = `https://jsonplaceholder.typicode.com/photos?id=${id}`;
+          const rawResponse = await fetch(url, { method: "GET" });
+          if (!rawResponse.ok) {
+            console.log("Error ocurred! Reload the page please.");
+            return;
+          }
+          const json = await rawResponse.json();
+          showItem(json);
+        } catch (err) {
+          console.log("Network error ocurred! Reload the page please.");
+        }
+      }
+      fetchItem();
+    </script>
+  </body>
+</html>
