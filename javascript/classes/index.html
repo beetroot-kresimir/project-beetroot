@@ -60,31 +60,23 @@
     console.log(coupe.drive());
     console.log(sedan.drive());
 
+    // --inheritance--
+    class SuperVehicle extends Vehicle {
+      constructor(type, fuel, turbo) {
+        super(type, fuel)
 
+        this.turbo = turbo;
+      }
+      doSuperDrive() {
+        return `I am driving type ${this.type} with turbo ${this.turbo}`;
+      }
+    }
 
+    const superVehicle = new SuperVehicle("SUV", "petrol", "1234");
 
-
-
-
-
-
-
-    // // --inheritance--
-    // class SuperVehicle extends Vehicle {
-    //   constructor(type, fuel, turbo) {
-    //     super(type, fuel)
-
-    //     this.turbo = turbo;
-    //   }
-    //   doSuperDrive() {
-    //     return `I am driving type ${this.type} with turbo ${this.turbo}`;
-    //   }
-    // }
-
-    // const superVehicle = new SuperVehicle("SUV", "petrol", "1234");
-
-    // console.log(superVehicle.drive());
-    // console.log(superVehicle.doSuperDrive());
+    console.log(superVehicle.drive());
+    console.log(superVehicle.doSuperDrive());
 
   </script>
 </html>
+// 
